@@ -1,7 +1,7 @@
 <div
   class="bg-gray-100 h-full w-full flex flex-col items-center justify-center text-center space-y-8"
 >
-  <div class="rounded-2xl bg-white shadow-md lg:w-2/7 vs:w-3/7">
+  <div class="rounded-2xl bg-white shadow-md md:w-2/5 vs:max-md:w-9/12">
     <h2 class="text-xl my-10 font-bold">Login to Your Account</h2>
     <form [formGroup]="form" class="text-neutral-500 flex flex-col text-start space-y-2 px-10" (ngSubmit)="logIn()">
       <app-inputs type="text" id="email" [control]="form.controls.email"> Email : </app-inputs>
