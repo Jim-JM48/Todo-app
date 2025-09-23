@@ -1,0 +1,30 @@
+<div
+  class="bg-gray-100 h-full w-full flex flex-col items-center justify-center text-center space-y-8"
+>
+  <div class="rounded-2xl bg-white shadow-md lg:w-2/7 vs:w-3/7">
+    <h2 class="text-xl my-7 font-bold">Create an Account</h2>
+    <form [formGroup]="form" class="text-neutral-800 flex flex-col text-start space-y-1 px-10" (ngSubmit)="signUp()">
+      <app-inputs type="text" id="fName" [control]="form.controls.fName">
+        Full Name :
+      </app-inputs>
+      <app-inputs type="text" id="email" [control]="form.controls.email">
+        Email :
+      </app-inputs>
+      <app-inputs type="text" id="phone" [control]="form.controls.phone">
+        phone :
+      </app-inputs>
+      <app-inputs type="password" id="password" [control]="form.controls.password">
+        Password :
+      </app-inputs>
+      <app-inputs type="password" id="confirmPassword" [control]="form.controls.confirmPassword">
+        Confirm Password :
+      </app-inputs>
+      <button type="submit" class="bt-btn bg-blue-600 text-neutral-50 block w-fit mx-auto rounded-3xl my-3" [disabled]="!form.valid">
+        Sign Up
+      </button>
+    </form>
+    <p class="my-3">
+      Already have an account? <a routerLink="/login" class="underline text-blue-600">Login</a>
+    </p>
+  </div>
+</div>

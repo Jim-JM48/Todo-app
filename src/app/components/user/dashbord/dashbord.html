@@ -1,0 +1,35 @@
+<div id="dashboard" class="h-full w-full grid grid-cols-10">
+  <div
+    id="panel"
+    class="h-full relative font-bold col-span-2 vs:max-md:col-span-3 bg-violet-200 text-neutral-800 border-r-1 z-10 shadow-2xl shadow-black"
+  >
+    <h2 class="text-center bg-indigo-500 py-5">Dashboard</h2>
+    <a routerLink="account" routerLinkActive="live">
+      <span>
+        <fa-icon icon="address-card" />
+        <h3>Account</h3>
+      </span>
+    </a>
+    <a routerLink="todo" routerLinkActive="live">
+      <span>
+        <fa-icon icon="file-pen" />
+        <h3>Todo</h3>
+      </span>
+    </a>
+    <a routerLink="quests" routerLinkActive="live">
+      <span>
+        <fa-icon icon="layer-group" />
+        <h3>Quests</h3>
+      </span>
+    </a>
+    <a>
+      <span>
+        <fa-icon icon="file" />
+        <h3>Empty page</h3>
+      </span>
+    </a>
+  </div>
+  <div id="viewcontent" class="bg-violet-100 h-full text-center col-span-8 vs:max-md:col-span-7">
+    <router-outlet></router-outlet>
+  </div>
+</div>

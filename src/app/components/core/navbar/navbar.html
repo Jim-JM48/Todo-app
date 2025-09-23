@@ -1,0 +1,33 @@
+<nav class="h-1/10 w-full px-3 py-5 flex justify-between items-center shadow-lg sticky">
+  <ol class="w-fit ms-4 font-bold text-2xl text-blue-600 cursor-pointer">
+    <li>Todo</li>
+  </ol>
+  @if(authserv.authstate$ | async) {
+    <li
+      class="px-3 py-2 text-blue-600 font-extrabold border rounded-2xl hover:bg-rose-500 hover:text-neutral-100"
+      (click)="logout()"
+    >
+      <fa-icon icon="right-from-bracket" />
+      Logout
+    </li>
+  } @else {
+    <ul
+      id="navLinks"
+      [ngClass]="{ 'vs:max-md:invisible': linksvisbility() }"
+      class="w-fit md:me-4 md:space-x-5 flex justify-around text-neutral-500"
+    >
+      <li>
+        <a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="live">Home</a>
+      </li>
+      <li><a routerLink="/login" routerLinkActive="live">Login</a></li>
+      <li><a routerLink="/signup" routerLinkActive="live">Signup</a></li>
+    </ul>
+  }
+  @if(!(authserv.authstate$ | async)) {
+    <div id="ToggleBtn" class="md:hidden flex flex-col cursor-pointer" (click)="changeLinksStates()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  }
+</nav>

@@ -1,0 +1,16 @@
+
+h3 {
+    width: 100%;
+    font-weight: bolder;
+    font-size: large;
+    padding: 1rem;
+    border-bottom: 1px solid;
+}
+
+@media screen and (max-width : 768px ) {
+    h3 {
+        font-size: medium;
+        padding: 0.5rem;
+        text-wrap: wrap;
+    }
+}

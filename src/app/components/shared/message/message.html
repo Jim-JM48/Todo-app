@@ -1,0 +1,22 @@
+<div [ngStyle]="{ display: isDisplayed() }" class="overlay">
+  <span class="relative -translate-y-42 p-7 inline-block rounded-2xl bg-neutral-300 border-2 border-emerald-500 z-20">
+    <fa-icon
+      icon="xmark"
+      class="absolute top-1 right-1 cursor-pointer text-rose-600"
+      (click)="closeBtn.emit(isDisplayed())"
+    />
+    <ng-content></ng-content>
+    @if(allowInput()) {
+      <div class="space-x-3 space-y-3 py-3">
+        <h5>Task Name : {{ taskName() }}</h5>
+        <label for="edit">Edit : </label>
+        <select [(ngModel)]="currentValue" class="border-2 border-blue-600 p-2 rounded-2xl" id="edit" name="status">
+          @for (option of options; track $index) {
+            <option [value]="option.value">{{ option.label }}</option>
+          }
+        </select>
+        <span class="bt-btn block w-1/2 mx-auto bg-blue-600 text-neutral-100" (click)="confirmEdits.emit(currentValue())">Ok</span>
+      </div>
+    }
+  </span>
+</div>

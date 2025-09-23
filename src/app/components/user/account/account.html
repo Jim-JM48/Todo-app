@@ -1,0 +1,15 @@
+
+
+<div class="h-full">
+    <div class="w-2/6 vs:max-md:w-4/6 h-full p-8 mx-auto flex flex-col items-center gap-4 bg-neutral-100 shadow-2xl rounded-2xl">
+        <h2>Profile</h2>
+        <span class="inline-block relative p-10 rounded-full bg-neutral-200 overflow-hidden">
+            <fa-icon class="text-5xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1" icon="user-tie"/>
+        </span>
+        <h3>User Name : {{ userData().name }}</h3>
+        <h3>Depatment : Sales</h3>
+        <h3>Role : {{ userData().role | uppercase}}</h3>
+        <h3>Email : {{ userData().email }}</h3>
+        <h3>Phone No: {{ userData().phone }}</h3>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<label class="mb-2" [for]="id()">
+    <ng-content></ng-content>
+</label>
+<input [type]="type()" [id]="id()" [formControl]="control()"/>
+@if (control().touched && control().dirty) {
+
+    @if(control().hasError('required')) {
+        <p class="text-center text-xs leading-7 text-red-500 font-bold">Field Required</p>
+    }
+
+    @if(control().hasError('minlength')) {
+        <p class="text-center text-xs leading-7 text-red-500 font-bold">Field have to be at least 8 character</p>
+    }
+    
+    @if(control().hasError('email')) {
+        <p class="text-center text-xs leading-7 text-red-500 font-bold">Email is not valisd</p>
+    }
+    @if(control().hasError('noMatch')) {
+        <p class="text-center text-xs leading-7 text-red-500 font-bold">Password Does't Matches</p>
+    }
+}

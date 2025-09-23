@@ -1,0 +1,13 @@
+<div class="grid grid-cols-6 py-2 italic">
+  <h4>{{ id() }}</h4>
+  <h4 class="col-span-2 vs:max-md:text-wrap">{{ name() |slice:0:10}}</h4>
+  <h4>
+    <span [id]="status()" class="p-2! border-1!">{{ status() }}</span>
+  </h4>
+  <h4>
+    <span><fa-icon icon="pen" class="cursor-pointer text-blue-700" (click)="editBtn.emit()"/></span>
+  </h4>
+  <h4>
+    <span><fa-icon icon="trash" class="cursor-pointer text-red-600" (click)="removeBtn.emit()"/></span>
+  </h4>
+</div>

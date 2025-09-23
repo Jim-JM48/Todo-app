@@ -1,0 +1,30 @@
+<div class="mx-auto w-3/4 vs:max-md:w-11/12">
+  @if(quests().length > 0) {
+    <div class="py-4 grid grid-cols-6">
+      <h3>#</h3>
+      <h3 class="col-span-2">Task Name</h3>
+      <h3>Status</h3>
+      <h3>Edit</h3>
+      <h3>Remove</h3>
+    </div>
+    @for (quest of quests() ; track quest.id) {
+      <app-tabledata
+        [id]="quest.id!"
+        [name]="quest.name!"
+        [status]="quest.status!"
+        (editBtn)="showMessage.set('block');getQuest.set(quest)"
+        (removeBtn)="removeItem(quest.id!)"
+      ></app-tabledata>
+    }
+  <app-message
+    [isDisplayed]="showMessage()"
+    (closeBtn)="showMessage.set('none')"
+    [allowInput]="true"
+    [taskName]="getQuest().name!"
+    (confirmEdits)="editItem(getQuest().id! ,$event)"
+    >Edit Quest</app-message
+  >
+  } @else {
+      <h2 class="font-bold text-2xl mt-52">No Quest To Show</h2>
+    }
+</div>
